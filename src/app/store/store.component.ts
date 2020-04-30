@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 import { Product } from "../model/product.model";
 import { ProductRepository } from "../model/product.repository";
 import { Cart } from "../model/cart.model";
@@ -53,6 +53,7 @@ export class StoreComponent {
     this.cart.addLine(product);
     this.router.navigateByUrl("/cart");
   }
+
   //get pageNumbers(): number[] {
   //    return Array(Math.ceil(this.repository
   //        .getProducts(this.selectedCategory).length / this.productsPerPage))
