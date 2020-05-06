@@ -9,6 +9,7 @@ import { CartDetailComponent } from "./store/cartDetail.component";
 import { CheckoutComponent } from "./store/checkout.component";
 
 import { StoreFirstGuard } from "./storeFirst.guard";
+import { ProductFilterPipe } from "./store/product-filter.pipe";
 
 @NgModule({
   imports: [
@@ -40,7 +41,7 @@ import { StoreFirstGuard } from "./storeFirst.guard";
     ]),
   ],
   providers: [StoreFirstGuard],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ProductFilterPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

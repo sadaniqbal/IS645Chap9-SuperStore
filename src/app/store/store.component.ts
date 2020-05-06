@@ -18,11 +18,18 @@ export class StoreComponent {
     public cart: Cart,
     public router: Router
   ) {}
+  searchTerm: string;
 
   get products(): Product[] {
     let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
     return this.repository
       .getProducts(this.selectedCategory)
+
+      .filter(
+        (product) =>
+          product.name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !==
+          -1
+      )
       .slice(pageIndex, pageIndex + this.productsPerPage);
   }
 

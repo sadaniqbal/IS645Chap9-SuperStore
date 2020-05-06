@@ -27,6 +27,15 @@
     </div>
 
     <div class="col-9 p-2">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search By Name"
+          style="width: 300px;"
+          [(ngModel)]="searchTerm"
+        />
+      </div>
       <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
         <h4>
           {{ product.name }}
