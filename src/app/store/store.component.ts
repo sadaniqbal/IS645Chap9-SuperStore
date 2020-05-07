@@ -20,6 +20,16 @@ export class StoreComponent {
   ) {}
   searchTerm: string = "";
 
+  match(name: String) {
+    const trimmed = this.searchTerm.trim();
+    let match = false;
+    if (trimmed === "") {
+      match = true;
+    } else {
+      match = name.toLowerCase().indexOf(trimmed.toLowerCase()) !== -1;
+    }
+    return match;
+  }
   get products(): Product[] {
     let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
     return this.repository
